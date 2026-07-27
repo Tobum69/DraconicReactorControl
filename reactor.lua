@@ -376,14 +376,12 @@ function outputMenu()
 
     -- Define button data (Label, Value, Change Type)
     local buttonData = {
-        {label = "+1M", value = 1000000, changeType = 1}, -- +1,000,000
         {label = "+100K", value = 100000, changeType = 1},   -- +100,000
         {label = "+10K", value = 10000, changeType = 1},     -- +10,000
         {label = "+1K", value = 1000, changeType = 1},       -- +1,000
         {label = "-1K", value = 1000, changeType = 0},       -- -1,000
         {label = "-10K", value = 10000, changeType = 0},     -- -10,000
         {label = "-100K", value = 100000, changeType = 0},   -- -100,000
-        {label = "-1M", value = 1000000, changeType = 0}, -- -1,000,000
     }
 
     -- Determine the starting X position dynamically
@@ -470,8 +468,8 @@ function buttonMain()
     local sLength2 = (sLength+8+(string.len("Output"))+1)
     button.setButton("output", "Output", outputMenu, sLength+8, 28, sLength2, 30, 0, 0, colors.blue)
 
-    local sLength3 = (sLength+16+(string.len("Shield"))+1)
-    button.setButton("shield", "Shield", targetStrength, sLength+16, 28, sLength3, 30, 0, 0, colors.blue)
+    local sLength3 = (sLength+18+(string.len("Shield"))+1)
+    button.setButton("shield", "Shield", targetStrength, sLength+18, 28, sLength3, 30, 0, 0, colors.blue)
 
     button.screen()
 end
@@ -481,7 +479,7 @@ local lastValues = {}
 function reactorInfoScreen()
     mon.clear()
 
-    f.draw_text(mon, 2, 38, "Made by: StormFusions  v"..version, "Modified by: Alexnox", colors.gray, colors.black)
+    f.draw_text(mon, 2, 38, "Made by: StormFusions  v0.3 Modified by: Alexnox", colors.gray, colors.black)
 
     -- Draw Static UI Elements (Frames, Labels)
     f.draw_line(mon, 2, 22, monX-2, colors.gray)
