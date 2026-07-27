@@ -479,7 +479,7 @@ local lastValues = {}
 function reactorInfoScreen()
     mon.clear()
 
-    f.draw_text(mon, 2, 78, "Made by: StormFusions  v0.3 Modified by: Alexnox", colors.gray, colors.black)
+    f.draw_text(mon, 2, 38, "Made by: StormFusions  v0.3 Modified by: Alexnox", colors.gray, colors.black)
 
     -- Draw Static UI Elements (Frames, Labels)
     f.draw_line(mon, 2, 22, monX-2, colors.gray)
