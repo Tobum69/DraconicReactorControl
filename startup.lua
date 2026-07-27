@@ -1,4 +1,4 @@
-local libURL = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/lib/f.lua"
+local libURL = "https://raw.githubusercontent.com/StormFusions/Draconic-ComputerCraft-Program/main/lib/f.lua"
 local libURL2 = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/lib/button.lua"
 local startupURL = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/reactor.lua"
 local lib, lib2, startup
