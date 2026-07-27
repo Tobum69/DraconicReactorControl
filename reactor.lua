@@ -467,11 +467,11 @@ function buttonMain()
     local sLength = 4+(string.len("Controls")+1)
     button.setButton("controls", "Controls", buttonControls, 4, 28, sLength, 30, 0, 0, colors.blue)
 
-    local sLength2 = (sLength+5+(string.len("Output"))+1)
-    button.setButton("output", "Output", outputMenu, sLength+5, 28, sLength2, 30, 0, 0, colors.blue)
+    local sLength2 = (sLength+8+(string.len("Output"))+1)
+    button.setButton("output", "Output", outputMenu, sLength+8, 28, sLength2, 30, 0, 0, colors.blue)
 
-    local sLength3 = (sLength+12+(string.len("Shield"))+1)
-    button.setButton("shield", "Shield", targetStrength, sLength+12, 28, sLength3, 30, 0, 0, colors.blue)
+    local sLength3 = (sLength+16+(string.len("Shield"))+1)
+    button.setButton("shield", "Shield", targetStrength, sLength+16, 28, sLength3, 30, 0, 0, colors.blue)
 
     button.screen()
 end
