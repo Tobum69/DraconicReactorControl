@@ -2,7 +2,7 @@
 os.loadAPI("lib/f")
 os.loadAPI("lib/button")
 
-targetStrength = 50
+--targetStrength = 50
 local maxTemp = 7750
 local safeTemp = 3000
 local lowFieldPer = 15
