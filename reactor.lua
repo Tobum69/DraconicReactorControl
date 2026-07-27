@@ -513,7 +513,7 @@ function updateReactorInfo()
 
     local tempColor = getTempColor(ri.temperature)
     drawUpdatedText(4, 7, "Temperature:", f.format_int(ri.temperature).."C", tempColor)
-    --drawUpdatedText(4, 8, "Target Field Strength:", f.format_int(targetStrength).."%", fieldColor)
+    drawUpdatedText(4, 8, "Target Field Strength:", f.format_int(targetStrength).."%", fieldColor)
     drawUpdatedText(4, 9, "Output Gate:", f.format_int(fluxgate.getSignalLowFlow()).." rf/t", colors.lightBlue)
     drawUpdatedText(4, 10, "Input Gate:", f.format_int(inputFluxgate.getSignalLowFlow()).." rf/t", colors.lightBlue)
 
