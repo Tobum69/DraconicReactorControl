@@ -1,6 +1,6 @@
-local libURL = "https://github.com/Tobum69/DraconicReactorControl/blob/main/lib/f.lua"
-local libURL2 = "https://github.com/Tobum69/DraconicReactorControl/blob/main/lib/button.lua"
-local startupURL = "https://github.com/Tobum69/DraconicReactorControl/blob/main/reactor.lua"
+local libURL = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/lib/f.lua"
+local libURL2 = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/lib/button.lua"
+local startupURL = "https://raw.githubusercontent.com/Tobum69/DraconicReactorControl/refs/heads/main/reactor.lua"
 local lib, lib2, startup
 local libFile, lib2File, startupFile
  
