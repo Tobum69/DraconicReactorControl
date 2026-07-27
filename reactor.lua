@@ -364,6 +364,16 @@ function changetargetStrength(num, val)
 	updateReactorInfo()
 end
 
+function changemaxTemp(num, val)
+	
+	if val == 1 then
+		maxTemp = maxTemp+num
+	else
+		maxTemp = maxTemp-num
+	end
+	updateReactorInfo()
+end
+
 
 --Outpot Menu
 function outputMenu()
@@ -452,6 +462,48 @@ function TargetStrength()
     button.screen()
 end
 
+--Temerature Menu
+function MaxTemp()
+    if currentMenu == "maxtemp" then return end
+    currentMenu = "maxtemp"
+
+    MenuText = "Max Temperature:"
+
+    clearMenuArea() -- Clear old buttons
+
+    -- Define button data (Label, Value, Change Type)
+    local buttonData = {
+        {label = "+10C", value = 10, changeType = 1},   -- +10C
+        {label = "+5C", value = 5, changeType = 1},     -- +5C
+        {label = "+1C", value = 1, changeType = 1},     -- +1C
+        {label = "-1C", value = 1, changeType = 0},     -- -1C
+        {label = "-5C", value = 5, changeType = 0},     -- -5C
+        {label = "-10C", value = 10, changeType = 0},   -- -10C
+    }
+
+    -- Determine the starting X position dynamically
+    local spacing = 2
+    local buttonY = 28  -- Button row position
+
+    -- Add buttons dynamically
+    local currentX = monX - 7
+    for _, data in ipairs(buttonData) do
+        local buttonLength = string.len(data.label) + 1
+        local startX = currentX - buttonLength
+        local endX = startX + buttonLength
+
+        button.setButton(data.label, data.label, changemaxTemp, startX, buttonY, endX, buttonY + 2, data.value, data.changeType, colors.blue)
+
+        currentX = currentX - buttonLength - spacing  -- Move left for the next button
+    end
+
+    -- Add "Back" button at the bottom
+    local backLength = 4 + string.len("Back") + 1
+    button.setButton("back", "Back", buttonMain, 4, 32, backLength, 34, 0, 0, colors.blue)
+
+    -- Refresh screen
+    button.screen()
+end
 
 
 function buttonMain()
@@ -470,6 +522,9 @@ function buttonMain()
 
     local sLength3 = (sLength+20+(string.len("Shield"))+1)
     button.setButton("shield", "Shield", TargetStrength, sLength+20, 28, sLength3, 30, 0, 0, colors.blue)
+
+    local sLength4 = (sLength+28+(string.len("Temp"))+1)
+    button.setButton("temp", "Temp", MaxTemp, sLength+28, 28, sLength3, 30, 0, 0, colors.blue)
 
     button.screen()
 end
@@ -512,7 +567,8 @@ function updateReactorInfo()
     drawUpdatedText(4, 5, "Generation:", f.format_int(ri.generationRate).." rf/t", colors.lime)
 
     local tempColor = getTempColor(ri.temperature)
-    drawUpdatedText(4, 7, "Temperature:", f.format_int(ri.temperature).."C", tempColor)
+    drawUpdatedText(4, 6, "Temperature:", f.format_int(ri.temperature).."C", tempColor)
+    drawUpdatedText(4, 7, "Max Temperature:", f.format_int(maxTemp).."C", tempColor)
     drawUpdatedText(4, 8, "Target Field Strength:", f.format_int(targetStrength).."%", fieldColor)
     drawUpdatedText(4, 9, "Output Gate:", f.format_int(fluxgate.getSignalLowFlow()).." rf/t", colors.lightBlue)
     drawUpdatedText(4, 10, "Input Gate:", f.format_int(inputFluxgate.getSignalLowFlow()).." rf/t", colors.lightBlue)
