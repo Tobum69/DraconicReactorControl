@@ -72,7 +72,7 @@ end
 
 function draw_text_right(mon, offset, y, text, text_color, bg_color)
   mon.monitor.setBackgroundColor(bg_color)
-  mon.monitor.setTextColor(text_color)
+  mon.monitor.setTextColor(colors.white)
   mon.monitor.setCursorPos(mon.X-string.len(tostring(text))-offset,y)
   mon.monitor.write(text)
 end
