@@ -468,8 +468,8 @@ function buttonMain()
     local sLength2 = (sLength+8+(string.len("Output"))+1)
     button.setButton("output", "Output", outputMenu, sLength+8, 28, sLength2, 30, 0, 0, colors.blue)
 
-    local sLength3 = (sLength+18+(string.len("Shield"))+1)
-    button.setButton("shield", "Shield", targetStrength, sLength+18, 28, sLength3, 30, 0, 0, colors.blue)
+    local sLength3 = (sLength+20+(string.len("Shield"))+1)
+    button.setButton("shield", "Shield", targetStrength, sLength+20, 28, sLength3, 30, 0, 0, colors.blue)
 
     button.screen()
 end
@@ -479,7 +479,7 @@ local lastValues = {}
 function reactorInfoScreen()
     mon.clear()
 
-    f.draw_text(mon, 2, 38, "Made by: StormFusions  v0.3 Modified by: Alexnox", colors.gray, colors.black)
+    f.draw_text(mon, 2, 78, "Made by: StormFusions  v0.3 Modified by: Alexnox", colors.gray, colors.black)
 
     -- Draw Static UI Elements (Frames, Labels)
     f.draw_line(mon, 2, 22, monX-2, colors.gray)
