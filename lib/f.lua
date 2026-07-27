@@ -65,7 +65,7 @@ end
 --display text text on monitor, "mon" peripheral
 function draw_text(mon, x, y, text, text_color, bg_color)
   mon.monitor.setBackgroundColor(bg_color)
-  mon.monitor.setTextColor(0x1)
+  mon.monitor.setTextColor(colors.white)
   mon.monitor.setCursorPos(x,y)
   mon.monitor.write(text)
 end
