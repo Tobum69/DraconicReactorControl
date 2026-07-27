@@ -521,10 +521,10 @@ function buttonMain()
     button.setButton("output", "Output", outputMenu, sLength+5, 28, sLength2, 30, 0, 0, colors.blue)
 
     local sLength3 = (sLength+14+(string.len("Shield"))+1)
-    button.setButton("shield", "Shield2", TargetStrength, sLength+14, 28, sLength3, 30, 0, 0, colors.blue)
+    button.setButton("shield", "Shield", TargetStrength, sLength+14, 28, sLength3, 30, 0, 0, colors.blue)
 
-    local sLength4 = (sLength+20+(string.len("Temp"))+1)
-    button.setButton("temp", "Temp", MaxTemp, sLength+20, 28, sLength4, 30, 0, 0, colors.blue)
+    local sLength4 = (sLength+30+(string.len("Temp"))+1)
+    button.setButton("temp", "Temp", MaxTemp, sLength+30, 28, sLength4, 30, 0, 0, colors.blue)
 
     button.screen()
 end
